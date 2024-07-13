@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://domt0p1n804o6"]
+
+[ext_resource type="Texture2D" uid="uid://c0cm6l5ykgtcm" path="res://assets/images/PixelOfficeAssets.png" id="1_mscu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m286u"]
+size = Vector2(36, 6)
+
+[node name="SofaWhite" type="StaticBody2D"]
+y_sort_enabled = true
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 4.33333)
+shape = SubResource("RectangleShape2D_m286u")
+
+[node name="PixelOfficeAssets" type="Sprite2D" parent="CollisionShape2D2"]
+position = Vector2(0, -4.33333)
+texture = ExtResource("1_mscu4")
+region_enabled = true
+region_rect = Rect2(119, 66, 33, 15)

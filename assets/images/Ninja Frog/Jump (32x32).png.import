@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmgxoufq0dpar"
-path="res://.godot/imported/Run (32x32).png-8f1314c64a94df31a2144f29ebfb2e1d.ctex"
+uid="uid://blkke24b2i4f1"
+path="res://.godot/imported/Jump (32x32).png-c0eca4c4efad86906626dde3c0a87502.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ninja Frog/Run (32x32).png"
-dest_files=["res://.godot/imported/Run (32x32).png-8f1314c64a94df31a2144f29ebfb2e1d.ctex"]
+source_file="res://assets/images/Ninja Frog/Jump (32x32).png"
+dest_files=["res://.godot/imported/Jump (32x32).png-c0eca4c4efad86906626dde3c0a87502.ctex"]
 
 [params]
 

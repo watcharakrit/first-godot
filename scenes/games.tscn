@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://pkh5bogebcul"]
+
+[ext_resource type="PackedScene" uid="uid://domt0p1n804o6" path="res://props/sofa-white-y-sorting.tscn" id="1_h70ku"]
+[ext_resource type="PackedScene" uid="uid://cfvcka850o7c6" path="res://charactors/player.tscn" id="1_qn4er"]
+
+[node name="Games" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(2, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="SofaWhite" parent="." instance=ExtResource("1_h70ku")]
+position = Vector2(0, -11)
+
+[node name="Player" parent="." instance=ExtResource("1_qn4er")]
+position = Vector2(1, 0)

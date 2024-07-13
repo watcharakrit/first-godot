@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn35y25efcdeq"
-path="res://.godot/imported/Hit (32x32).png-ffb0375dd7f12147073c30fad6d601a1.ctex"
+uid="uid://c0cm6l5ykgtcm"
+path="res://.godot/imported/PixelOfficeAssets.png-e44c1b578fa9762a5736755cf1f2b0b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ninja Frog/Hit (32x32).png"
-dest_files=["res://.godot/imported/Hit (32x32).png-ffb0375dd7f12147073c30fad6d601a1.ctex"]
+source_file="res://assets/images/PixelOfficeAssets.png"
+dest_files=["res://.godot/imported/PixelOfficeAssets.png-e44c1b578fa9762a5736755cf1f2b0b1.ctex"]
 
 [params]
 
