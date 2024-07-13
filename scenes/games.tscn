@@ -10,6 +10,13 @@ position = Vector2(2, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -120.0
+offset_top = -69.0
+offset_right = 120.0
+offset_bottom = 67.0
+color = Color(0.355314, 0.355314, 0.355314, 1)
+
 [node name="SofaWhite" parent="." instance=ExtResource("1_h70ku")]
 position = Vector2(0, -11)
 
