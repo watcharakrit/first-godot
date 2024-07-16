@@ -15,10 +15,10 @@ offset_left = -120.0
 offset_top = -69.0
 offset_right = 120.0
 offset_bottom = 67.0
-color = Color(0.355314, 0.355314, 0.355314, 1)
+color = Color(0.486738, 0.608137, 0.529604, 1)
 
 [node name="SofaWhite" parent="." instance=ExtResource("1_h70ku")]
 position = Vector2(0, -11)
 
 [node name="Player" parent="." instance=ExtResource("1_qn4er")]
-position = Vector2(1, 0)
+position = Vector2(-2, 34)
