@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://pkh5bogebcul"]
+[gd_scene load_steps=4 format=3 uid="uid://pkh5bogebcul"]
 
 [ext_resource type="PackedScene" uid="uid://domt0p1n804o6" path="res://props/sofa-white-y-sorting.tscn" id="1_h70ku"]
 [ext_resource type="PackedScene" uid="uid://cfvcka850o7c6" path="res://charactors/player.tscn" id="1_qn4er"]
+[ext_resource type="PackedScene" uid="uid://d4mii6ldrrx25" path="res://props/balloon.tscn" id="3_ph8cf"]
 
 [node name="Games" type="Node2D"]
 y_sort_enabled = true
@@ -18,7 +19,93 @@ offset_bottom = 67.0
 color = Color(0.486738, 0.608137, 0.529604, 1)
 
 [node name="SofaWhite" parent="." instance=ExtResource("1_h70ku")]
-position = Vector2(0, -11)
 
 [node name="Player" parent="." instance=ExtResource("1_qn4er")]
-position = Vector2(-2, 34)
+position = Vector2(-69, 31)
+height = 1.615
+
+[node name="Ballons" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-62, 0)
+
+[node name="Balloon" parent="Ballons" instance=ExtResource("3_ph8cf")]
+position = Vector2(50, 36)
+
+[node name="Balloon2" parent="Ballons" instance=ExtResource("3_ph8cf")]
+position = Vector2(63, 36)
+
+[node name="Balloon3" parent="Ballons" instance=ExtResource("3_ph8cf")]
+position = Vector2(76, 36)
+
+[node name="Ballons2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-62, -15)
+
+[node name="Balloon" parent="Ballons2" instance=ExtResource("3_ph8cf")]
+position = Vector2(50, 36)
+
+[node name="Balloon2" parent="Ballons2" instance=ExtResource("3_ph8cf")]
+position = Vector2(63, 36)
+
+[node name="Balloon3" parent="Ballons2" instance=ExtResource("3_ph8cf")]
+position = Vector2(76, 36)
+
+[node name="Ballons3" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-62, -30)
+
+[node name="Balloon" parent="Ballons3" instance=ExtResource("3_ph8cf")]
+position = Vector2(50, 36)
+
+[node name="Balloon2" parent="Ballons3" instance=ExtResource("3_ph8cf")]
+position = Vector2(63, 36)
+
+[node name="Balloon3" parent="Ballons3" instance=ExtResource("3_ph8cf")]
+position = Vector2(76, 36)
+
+[node name="Ballons4" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -15)
+
+[node name="Balloon" parent="Ballons4" instance=ExtResource("3_ph8cf")]
+position = Vector2(50, 36)
+height = 20.0
+
+[node name="Balloon2" parent="Ballons4" instance=ExtResource("3_ph8cf")]
+position = Vector2(63, 36)
+height = 20.0
+
+[node name="Balloon3" parent="Ballons4" instance=ExtResource("3_ph8cf")]
+position = Vector2(76, 36)
+height = 20.0
+
+[node name="Ballons5" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -29)
+
+[node name="Balloon" parent="Ballons5" instance=ExtResource("3_ph8cf")]
+position = Vector2(50, 36)
+height = 20.0
+
+[node name="Balloon2" parent="Ballons5" instance=ExtResource("3_ph8cf")]
+position = Vector2(63, 36)
+height = 20.0
+
+[node name="Balloon3" parent="Ballons5" instance=ExtResource("3_ph8cf")]
+position = Vector2(76, 36)
+height = 20.0
+
+[node name="Ballons6" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Balloon" parent="Ballons6" instance=ExtResource("3_ph8cf")]
+position = Vector2(50, 36)
+height = 20.0
+
+[node name="Balloon2" parent="Ballons6" instance=ExtResource("3_ph8cf")]
+position = Vector2(63, 36)
+height = 20.0
+
+[node name="Balloon3" parent="Ballons6" instance=ExtResource("3_ph8cf")]
+position = Vector2(76, 36)
+height = 20.0

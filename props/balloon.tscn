@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4mii6ldrrx25"]
+
+[ext_resource type="Script" path="res://scripts/Balloon.gd" id="1_phlnq"]
+[ext_resource type="Script" path="res://props/CharacterBody2D.gd" id="2_2vegc"]
+[ext_resource type="Texture2D" uid="uid://b2y854mwinqgj" path="res://assets/images/balloon.png" id="2_actdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r24r"]
+size = Vector2(4, 1)
+
+[node name="Balloon" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_phlnq")
+
+[node name="Shadow" type="Node2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="ColorRect" type="ColorRect" parent="Shadow"]
+offset_left = -3.0
+offset_right = 3.0
+offset_bottom = 1.0
+pivot_offset = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+color = Color(0.278431, 0.278431, 0.278431, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_1r24r")
+disabled = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+platform_on_leave = 1
+script = ExtResource("2_2vegc")
+
+[node name="Balloon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(4.33681e-19, 1)
+scale = Vector2(0.0384615, 0.0384615)
+texture = ExtResource("2_actdd")
+offset = Vector2(2.08165e-12, -313)
+
+[connection signal="height_change" from="CharacterBody2D" to="." method="_on_character_body_2d_height_change"]
