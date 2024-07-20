@@ -4,6 +4,9 @@ extends StaticBody2D
 		
 @onready var shadow = $Shadow
 @onready var balloon = $CharacterBody2D
+const LABEL_DAMAGE = preload("res://ui/label_damage.tscn")
+@onready var marker_2d_label_damage = $Marker2DLabelDamage
+
 
 func _ready():
 	var _height = height * -1
@@ -18,3 +21,9 @@ func _physics_process(delta):
 
 func _on_character_body_2d_height_change(_height):
 	height = _height * -1
+
+func take_damage(damage):
+	var labelDamage = LABEL_DAMAGE.instantiate()
+	labelDamage.position = marker_2d_label_damage.position
+	labelDamage.damage = damage
+	add_child(labelDamage)

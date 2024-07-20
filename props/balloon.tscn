@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4mii6ldrrx25"]
+[gd_scene load_steps=7 format=3 uid="uid://d4mii6ldrrx25"]
 
 [ext_resource type="Script" path="res://scripts/Balloon.gd" id="1_phlnq"]
 [ext_resource type="Script" path="res://props/CharacterBody2D.gd" id="2_2vegc"]
 [ext_resource type="Texture2D" uid="uid://b2y854mwinqgj" path="res://assets/images/balloon.png" id="2_actdd"]
+[ext_resource type="Script" path="res://scripts/HurtBox.gd" id="4_vs0jw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1r24r"]
 size = Vector2(4, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpwkx"]
+radius = 5.0
+
 [node name="Balloon" type="StaticBody2D"]
-collision_layer = 16
+collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_phlnq")
 
@@ -39,5 +43,15 @@ position = Vector2(4.33681e-19, 1)
 scale = Vector2(0.0384615, 0.0384615)
 texture = ExtResource("2_actdd")
 offset = Vector2(2.08165e-12, -313)
+
+[node name="HurtBox" type="Area2D" parent="CharacterBody2D"]
+script = ExtResource("4_vs0jw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/HurtBox"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_kpwkx")
+
+[node name="Marker2DLabelDamage" type="Marker2D" parent="."]
+position = Vector2(-3, -17)
 
 [connection signal="height_change" from="CharacterBody2D" to="." method="_on_character_body_2d_height_change"]

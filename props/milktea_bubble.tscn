@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://1ji4byyko450"]
+[gd_scene load_steps=8 format=3 uid="uid://1ji4byyko450"]
 
 [ext_resource type="Script" path="res://props/milktea_bubble.gd" id="1_gwtu0"]
 [ext_resource type="Texture2D" uid="uid://ctfsccbx740md" path="res://assets/images/milktea-bubble.png" id="2_n40cv"]
 [ext_resource type="Script" path="res://props/BubbleHeight.gd" id="3_3qser"]
 [ext_resource type="Script" path="res://props/LabelBubbleHeight.gd" id="4_adeg1"]
+[ext_resource type="Script" path="res://scripts/HitBox.gd" id="5_akec4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t7pak"]
+radius = 4.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_cok2k"]
 font_size = 30
@@ -28,6 +32,15 @@ position = Vector2(0, -7)
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("2_n40cv")
 offset = Vector2(0, -11.1111)
+
+[node name="HitBox" type="Area2D" parent="Milktea-bubble"]
+position = Vector2(0, 77.7778)
+scale = Vector2(11.1111, 11.1111)
+script = ExtResource("5_akec4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Milktea-bubble/HitBox"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_t7pak")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

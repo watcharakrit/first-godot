@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cumc1iep80ov4"]
+
+[ext_resource type="Script" path="res://ui/label_damage.gd" id="1_rd3g5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vd2sq"]
+font_size = 30
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.266667)
+shadow_offset = Vector2(1, 2)
+
+[node name="LabelDamage" type="CanvasGroup"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_rd3g5")
+
+[node name="Text" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(13, 11)
+size_flags_horizontal = 4
+text = "0000!"
+label_settings = SubResource("LabelSettings_vd2sq")

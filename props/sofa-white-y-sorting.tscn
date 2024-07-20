@@ -3,26 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://c0cm6l5ykgtcm" path="res://assets/images/PixelOfficeAssets.png" id="1_mscu4"]
 [ext_resource type="Script" path="res://props/SofaWhiteHitBox.gd" id="2_5nry1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t3yj1"]
-radius = 20.7096
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m286u"]
 size = Vector2(32, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3yj1"]
+radius = 20.7096
 
 [node name="SofaWhite" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
 collision_layer = 16
 collision_mask = 0
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("2_5nry1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-shape = SubResource("CircleShape2D_t3yj1")
 
 [node name="PixelOfficeAssets" type="Sprite2D" parent="."]
 texture = ExtResource("1_mscu4")
@@ -34,3 +24,11 @@ region_rect = Rect2(119, 66, 33, 15)
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_m286u")
 debug_color = Color(0.765938, 0.426917, 0.374437, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_5nry1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t3yj1")
