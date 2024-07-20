@@ -16,13 +16,11 @@ func _input(event):
 		shoot(MILKTEA_BUBBLE)
 
 func shoot(projectile: PackedScene):
-	var direction = Input.get_axis("ui_left", "ui_right")
-	var projectile_instance := projectile.instantiate()
-	projectile_instance.position = player.shoot_position.global_position
-	projectile_instance.height += player.height
-	
-	if direction > 0:
-		projectile_instance.direction = Vector2.RIGHT
-	elif direction < 0: 
-		projectile_instance.direction = Vector2.LEFT
-	add_child(projectile_instance)
+	for n in 3:
+		var index = n - 1
+		var projectile_instance := projectile.instantiate()
+		projectile_instance.position = player.shoot_position.global_position
+		projectile_instance.height += player.height
+		projectile_instance.direction = player.face_direction.rotated(.2 * index)
+		#Vector2(0,0).direction_to()
+		add_child(projectile_instance)

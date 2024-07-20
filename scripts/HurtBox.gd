@@ -12,5 +12,9 @@ func _on_area_entered(hitBox: HitBox):
 	if hitBox == null:
 		return
 		
+	var dif = abs(owner.position.y - hitBox.owner.position.y)
+	if dif > 5:
+		return
+		
 	if owner.has_method('take_damage'):
 		owner.take_damage(hitBox.damage)

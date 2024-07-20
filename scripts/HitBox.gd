@@ -14,6 +14,10 @@ func _ready():
 func _on_area_entered(hurtBox: HurtBox):
 	if hurtBox == null:
 		return
+		
+	var dif = abs(owner.position.y - hurtBox.owner.position.y)
+	if dif > 5:
+		return
 	
 	if owner.has_method('on_impacted'):
 		owner.on_impacted()
