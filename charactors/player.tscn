@@ -94,4 +94,7 @@ visible = false
 position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_k7t1u")
 
+[node name="ShootPosition" type="Marker2D" parent="."]
+position = Vector2(17, -1)
+
 [connection signal="height_change" from="BodyJump" to="." method="_on_body_jump_height_change"]

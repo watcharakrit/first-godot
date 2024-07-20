@@ -7,6 +7,7 @@ const SPEED = 100.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim_sprite = $Animations/idle
 @onready var BodyJump = $BodyJump
+@onready var shoot_position = $ShootPosition
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -31,6 +32,5 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
 func _on_body_jump_height_change(_height):
-	height = int(_height) * -1
+	height = _height * -1

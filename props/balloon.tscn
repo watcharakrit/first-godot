@@ -23,6 +23,7 @@ pivot_offset = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 color = Color(0.278431, 0.278431, 0.278431, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

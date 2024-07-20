@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://1ji4byyko450"]
+
+[ext_resource type="Script" path="res://props/milktea_bubble.gd" id="1_gwtu0"]
+[ext_resource type="Texture2D" uid="uid://ctfsccbx740md" path="res://assets/images/milktea-bubble.png" id="2_n40cv"]
+[ext_resource type="Script" path="res://props/BubbleHeight.gd" id="3_3qser"]
+[ext_resource type="Script" path="res://props/LabelBubbleHeight.gd" id="4_adeg1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cok2k"]
+font_size = 30
+
+[node name="MilkteaBubble" type="Node2D"]
+script = ExtResource("1_gwtu0")
+
+[node name="Shadow" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Shadow"]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 2.0
+pivot_offset = Vector2(2, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.278431, 0.278431, 0.278431, 1)
+
+[node name="Milktea-bubble" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -7)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_n40cv")
+offset = Vector2(0, -11.1111)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BubbleHeight" type="CharacterBody2D" parent="."]
+script = ExtResource("3_3qser")
+
+[node name="Debugger" type="Node2D" parent="."]
+visible = false
+position = Vector2(-11, 1)
+scale = Vector2(0.1, 0.1)
+
+[node name="LabelBubbleHeight" type="Label" parent="Debugger"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Height: {BubbleHeight}"
+label_settings = SubResource("LabelSettings_cok2k")
+script = ExtResource("4_adeg1")
+
+[connection signal="height_change" from="BubbleHeight" to="." method="_on_bubble_height_change"]

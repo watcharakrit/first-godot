@@ -1,12 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://pkh5bogebcul"]
+[gd_scene load_steps=11 format=3 uid="uid://pkh5bogebcul"]
 
+[ext_resource type="Script" path="res://scenes/games.gd" id="1_3iap8"]
 [ext_resource type="PackedScene" uid="uid://domt0p1n804o6" path="res://props/sofa-white-y-sorting.tscn" id="1_h70ku"]
 [ext_resource type="PackedScene" uid="uid://cfvcka850o7c6" path="res://charactors/player.tscn" id="1_qn4er"]
 [ext_resource type="PackedScene" uid="uid://d4mii6ldrrx25" path="res://props/balloon.tscn" id="3_ph8cf"]
+[ext_resource type="Script" path="res://scenes/Path2D.gd" id="4_nobe5"]
+[ext_resource type="Script" path="res://scenes/Label.gd" id="5_8lgye"]
+[ext_resource type="Script" path="res://scenes/label_balloon_height.gd" id="6_sdj2l"]
+
+[sub_resource type="Curve2D" id="Curve2D_6ae2v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_tibna"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_vo2ft"]
+font_size = 30
 
 [node name="Games" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(2, 1)
+script = ExtResource("1_3iap8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -25,6 +42,7 @@ position = Vector2(-69, 31)
 height = 1.615
 
 [node name="Ballons" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(-62, 0)
 
@@ -38,6 +56,7 @@ position = Vector2(63, 36)
 position = Vector2(76, 36)
 
 [node name="Ballons2" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(-62, -15)
 
@@ -51,6 +70,7 @@ position = Vector2(63, 36)
 position = Vector2(76, 36)
 
 [node name="Ballons3" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(-62, -30)
 
@@ -64,48 +84,73 @@ position = Vector2(63, 36)
 position = Vector2(76, 36)
 
 [node name="Ballons4" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(0, -15)
 
 [node name="Balloon" parent="Ballons4" instance=ExtResource("3_ph8cf")]
 position = Vector2(50, 36)
-height = 20.0
 
 [node name="Balloon2" parent="Ballons4" instance=ExtResource("3_ph8cf")]
 position = Vector2(63, 36)
-height = 20.0
 
 [node name="Balloon3" parent="Ballons4" instance=ExtResource("3_ph8cf")]
 position = Vector2(76, 36)
-height = 20.0
 
 [node name="Ballons5" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(0, -29)
 
 [node name="Balloon" parent="Ballons5" instance=ExtResource("3_ph8cf")]
 position = Vector2(50, 36)
-height = 20.0
 
 [node name="Balloon2" parent="Ballons5" instance=ExtResource("3_ph8cf")]
 position = Vector2(63, 36)
-height = 20.0
 
 [node name="Balloon3" parent="Ballons5" instance=ExtResource("3_ph8cf")]
 position = Vector2(76, 36)
-height = 20.0
 
 [node name="Ballons6" type="Node2D" parent="."]
+visible = false
 y_sort_enabled = true
 
 [node name="Balloon" parent="Ballons6" instance=ExtResource("3_ph8cf")]
 position = Vector2(50, 36)
-height = 20.0
 
 [node name="Balloon2" parent="Ballons6" instance=ExtResource("3_ph8cf")]
 position = Vector2(63, 36)
-height = 20.0
 
 [node name="Balloon3" parent="Ballons6" instance=ExtResource("3_ph8cf")]
 position = Vector2(76, 36)
-height = 20.0
+
+[node name="Path2D" type="Path2D" parent="."]
+visible = false
+curve = SubResource("Curve2D_6ae2v")
+script = ExtResource("4_nobe5")
+
+[node name="Balloon" parent="." instance=ExtResource("3_ph8cf")]
+position = Vector2(54, 30)
+
+[node name="LabelDebugger" type="Node2D" parent="."]
+visible = false
+position = Vector2(-1.52588e-05, -0.999992)
+scale = Vector2(0.1, 0.1)
+
+[node name="label_player_height" type="Label" parent="LabelDebugger"]
+offset_left = -820.0
+offset_top = 350.0
+offset_right = -495.0
+offset_bottom = 392.0
+text = "Height: {player.height}"
+label_settings = SubResource("LabelSettings_tibna")
+script = ExtResource("5_8lgye")
+
+[node name="label_balloon_height" type="Label" parent="LabelDebugger"]
+offset_left = 450.0
+offset_top = 340.0
+offset_right = 792.0
+offset_bottom = 382.0
+text = "Height: {balloon.height}"
+label_settings = SubResource("LabelSettings_vo2ft")
+script = ExtResource("6_sdj2l")
